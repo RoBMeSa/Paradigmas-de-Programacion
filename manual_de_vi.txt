@@ -1,0 +1,19 @@
+===========
+Manual de Vi
+==========
+R escribir reemplazando
+i escribir insertando
+o abrir renglon abajo
+O abrir renglon arriba
+x borrar
+dd borrar renglon
+D borrar renglon desde este espacio
+:w guardar
+:wq  guardar y salir
+:q! salir sin guardar
+\palabra buscar palabra
+n buscar la siguiente
+N buscar la anterior
+:numero se va a la linea del numero
+:$ se va a la ultima linea
+
