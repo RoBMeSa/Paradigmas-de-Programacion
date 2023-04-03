@@ -47,13 +47,13 @@ print("Hola ");print("tu¡ ") #Se considera mala practica
 # Usando parentesis redondos, cuadrados o llaves
 # Se puede escribir en varios renglones
 #=============================================
-list = [1,2,3,4,
+lista = [1,2,3,4,
         5,6,7,8,
         9,10,11,12]
 
 matriz = [ [1,2,3,4],[5,6,7,8],[9,10,11,12] ]
 
-print(list)
+print(lista)
 print(matriz)
 
 #=========================================================================
@@ -62,7 +62,7 @@ print(matriz)
 if 10>5:
     print ("diez es mayor que cinco")
     print ("Otra identación")
-for i in list:
+for i in lista:
     print(i)
     print("ok")
 if 10>5:
@@ -289,7 +289,7 @@ for i in nums:
 #===================================================
 nums.append(61)
 nums.append(62)
-nums.append(63)
+nums.append(61)
 print(nums)
 
 #==================================================
@@ -298,4 +298,209 @@ print(nums)
 nums.remove(61)
 print(nums)
 
+#==================================================
+#  Quitar elemento con el índice i
+#==================================================
+i = 61
+del nums[i]
+print(nums)
+
+#==================================================
+# Borrar la lista
+#==================================================
+del nums
+#==================================================
+#  Sumar listas
+#==================================================
+L1 = [1,2,3]
+L2 = [4,5,6]
+print(L1+L2)
+
+#==================================================
+#  Llenado a mano
+#==================================================
+potencial = []
+for i in range(0,10000):
+    potencial.append(float(i))
+print(potencial[100])
+
+#==================================================
+#  Generar una tupla con la lista
+#==================================================
+potencial = tuple(potencial)
+print(potencial[100])
+
+#=================================================
+# Laboratorio 3
+#=================================================
+
+#================================================
+# Condicionales
+#================================================
+precio = 50
+#====================
+#  Si esto
+#====================
+if precio < 50:
+    print("El precio es menor que 50")
+#============================
+#  Si no... Si esto otro...
+#============================
+elif precio >50:
+    print("El precio es mayor a 50")
+#============================
+#  Si nada de lo anterior...
+#============================
+else:
+    print("El precio es 50")
+
+precio = 50
+cantidad = 5 
+total = precio * cantidad
+
+#=============================
+#  Condicionales anidados
+#=============================
+
+if total > 100:
+    if total > 500:
+        print("Total es mayor que 500")
+    else:
+        if total < 500 and total > 400:
+            print("Total es menor que 500 pero mayor a 400")
+        elif total < 500 and total > 300:
+            print("total entre 300 y 500")
+        else:
+            print("total entre 100 y 300")
+#=========================================
+#  Condicional de igualdad son == 
+#=========================================
+elif total == 100:
+    print("Total es 100")
+else:
+    print("Total menor que 100")
+
+#=============================================
+#  Contador mientras la condicion sea verdadera
+#=============================================
+num =0
+while num < 5:
+     num = num + 1
+     print('num = ', num)
+
+num = 0
+while num < 5:
+    num += 1                # num +=1 es lo mismo que num = num + 1
+    print('num = ', num)
+    if num == 3:        # Conficion antes de salir del bucle
+        break
+num = 0
+while num < 5:
+    num += 1
+    if num > 3:
+        continue        # evitar lo que sigue, continuar con las iteraciones
+    print('num = ',num)
+
+#=================================================
+#  Bucle sobre lista
+#=================================================
+nums = [10, 20, 30, 40, 50]
+for i in nums:
+    print(i)
+
+#=================================================
+#  Bucle sobre un string
+#=================================================
+
+for char in 'Hello':
+    print(char)
+
+#=================================================
+# Bucle sobre un diccionario
+# items = elementos
+#=================================================
+numNames = {1:'One', 2:'Two', 3:'Three'}
+for pair in numNames.items():
+    print(pair)
+
+#=================================================
+# Bucle sobre diccionario 
+# Key = llave
+# Value = valor
+#=================================================
+for k,v in numNames.items():
+    print("key = ", k, ", value = ", v)
+    
+#=================================================
+#   Primera funcion 
+#=================================================
+def saludo():
+    #=============================================
+    # Documentacion rapida de la función
+    #=============================================
+    """Esta funcion saluda"""
+    print('¡Quiúboles!, ¿Como estás?')
+
+#=================================================
+#  Llamado de la función
+#=================================================
+saludo()
+
+#=================================================
+# Se ejecuta pero no se asigna
+#=================================================
+salida = saludo()
+
+#==============================
+#  Esto no funciona
+#==============================
+
+print(salida)
+
+#================================
+# Mostrar documentacion
+#================================
+# Help(saludo)
+
+#================================
+#  Funcion con argumento
+#================================
+def salu2(nombre):
+    """ Esta función te saluda por tu nombre"""
+    print(" ¡Que onda ese", nombre,"!")
+    salu2("Julián")
+    salu2("Ángel")
+
+#=================================================
+# Ahorrar trabajo del interprete
+# nombre:str la variable nombre es un str
+#=================================================
+
+def saludos(nombre:str):
+    """Esta funcion te saluda por tu nombre estrictamente"""
+    print(" ¡Que onda ese", nombre,"!")
+saludos("Julian")
+a = 123
+print(type(a))
+saludos (a)
+
+
+#=================================================
+# Funcion con muchos argumentos
+#=================================================
+def saludos_multiples(nombre1, nombre2, nombre3):
+    """Esta funcion saluda a 3 personas al mismo tiempo"""
+    print("Hola ", nombre1, ", ", nombre2, " y ", nombre3)
+saludos_multiples("Hugo", "Paco", "Luis")
+
+#=================================================
+# Funcion con cualquier numero de argumentos
+#=================================================
+def muchos_saludos(*nombres):
+    """Esta funcion saluda a todos los que quieras"""
+    i = 0
+    #=============================================
+    # end= es para ponerlo de corrido
+    #=============================================
+    print("Hola ", end= "")
 
