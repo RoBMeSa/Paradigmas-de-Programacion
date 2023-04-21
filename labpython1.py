@@ -503,4 +503,59 @@ def muchos_saludos(*nombres):
     # end= es para ponerlo de corrido
     #=============================================
     print("Hola ", end= "")
+    while len(nombres) > i:
+        #Ultimo nombre 
+        if(i==len(nombres)-1):
+            print(nombres[i])
+        else:
+            #Cualquier otro nombre
+            print(nombres[i], end=", ")
+        i+=1
+muchos_saludos("Bosco", "Angel", "David", "Tamara", "Mili", "Edwin", "Lev", "Luis", "Abigail")
 
+def greet(firstname, lastname):
+    print('Hello', firstname, lastname)
+
+#=================================================
+# Llamar la funcion con argumentos en desorden
+#=================================================
+greet(lastname='jobs', firstname='Steve')# Se pueden especificar las variables en desorden 
+
+#=================================================
+#  Funcin con argumentos escondidos ** 
+#=================================================
+def greet(**person):
+    #=============================================
+    #  Persona tiene caracteristicas firstname y lastname
+    #=============================================
+    print('Hello ', person['firstname'], person['lastname'])
+
+greet(firstname='Steve', lastname='Jobs')
+greet(lastname='JObs', firstname = 'Steve')
+greet(firstname='Bill', lastname='Gates', age=55) # Se pueden pasar más parámetros de los necesarios
+
+#================================================
+#  Funcion con valores por defecto
+#================================================
+def greet(name = 'Guest'):
+    print('Hello ', name)
+greet () # Utiliza el valor dado de antemano
+greet('Steve')
+
+#=================================================
+# Funcion con resultado
+#================================================
+def suma(a,b):
+    return a + b
+
+#================================================
+#  Programacion funcional
+#  Se pueden funciones en funciones
+#================================================
+total = suma(5, suma(10,20))
+print(total)
+
+#================================================
+# Calculo lambda
+# Nombre de la funcion = lambda variable : funcion
+#================================================
