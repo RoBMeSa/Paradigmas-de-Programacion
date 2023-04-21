@@ -558,4 +558,60 @@ print(total)
 #================================================
 # Calculo lambda
 # Nombre de la funcion = lambda variable : funcion
+#===============================================
+
+x_al_cuadrado = lambda x : x * x
+a1 = x_al_cuadrado(5)
+print(a1)
+
+#=============================
+# Lambda de varias variables
+#=============================
+suma = lambda x1, x2,x3: x1+x2+x3
+print(suma(99,98,97))
+
+sumas = lambda *x: x[0] + x[1] + x[2] + x[3]
+
+print(sumas(100,200,300,400))
+
 #================================================
+#  Uso de una funcion anonima
+#  El argumento va afuera entre paréntesis
+#================================================
+
+print((lambda x: x*x)(6)) # Funcion anonima
+
+#================================================
+# Funcion con variable global
+# EVITE EL EXCESO!!!!!!!!!!!!!111
+#================================================
+name = 'Steve'
+def greet():
+    global name # Para utilizar una variable global ( que viene de fuera del bloque)
+    name = 'Bill'
+    print('Hello ' , name)
+greet()
+
+#Algoritmo 1
+#=====================================
+# Serie exponencial
+# Factorización de x
+# Negativos con función inversa
+#=====================================
+n = 200
+x = -100.0
+flag = False
+if x<0: 
+    flag = True
+    x = -x
+s=1.0
+for i in range (n,0,-1):
+    s *= x/float(i)
+s+= 1.0
+if flag == True:
+    s = 1/s
+print(s)
+
+
+    
+
