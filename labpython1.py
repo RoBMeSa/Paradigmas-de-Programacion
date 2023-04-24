@@ -658,7 +658,7 @@ class Llanta:
 # Objetos instanciados
 #==============================
 llanta1 = Llanta(50,30,1.5)
-llanta2 = Llanta(presión=1.2)
+llanta2 = Llanta(presion=1.2)
 llanta3 = Llanta()
 llanta4 = Llanta(40,30,1.6)
 
@@ -705,6 +705,170 @@ estudiante = Estudiante()
 estudiante.nombre = "Diego"
 #=========================================================
 # Obtener nombre con el metodo obtener_nombre
-# __nombre es una variable encapsulada, no visible desde afuera
+# __nombre es una variable encapsulada, (no visible desde afuera)
+# (sin tener que llamar explícitamente a la función obtener_nombre)
 #==========================================================
+
+print(estudiante.nombre)
+
+# esto no funciona
+# print(estudiante.__nombre)
+
+#=======================================
+# Herencia de clases
+#=======================================
+class Cuadrilatero:
+    def __init__(mi, a, b, c, d):
+        mi.lado1=a
+        mi.lado2=b
+        mi.lado3=c
+        mi.lado4=d
+
+    def perimetro(mi):
+        p = mi.lado1 + mi.lado2 + mi.lado3 + mi.lado4
+        print("perimetro=", p)
+        return p
+#=======================================
+# Su hijo rectangulo
+# Rectangulo es hijo de cuadrilatero
+# Rectangulo(Cuadrilatero)
+#=======================================
+class Rectangulo(Cuadrilatero):
+    def __init__(self,a,b):
+        #==========================
+        # Constructor de su madre
+        #==========================
+        super().__init__(a, b, a, b)
+#========================
+# Su nieto cuadrado
+# Hijo de rectangulo
+#========================
+class Cuadrado(Rectangulo):
+    def __init__(self, a):
+        super().__init__(a,a)
+        print("Estoy creando un hijo de rectangulo nieto de cuadrilatero llamado cuadrado")
+
+    def area(self):
+        area = self.lado1**2
+        return area
+
+    #def perimetro(self)
+    #   p = 4.0*self.lado1
+    # print("perimetro = ", p)
+    # return p
+
+#=====================================
+# Crear un cuadrado
+#=====================================
+cuadrado1 = Cuadrado(5)
+
+#=====================================================
+# LLamar al metodo perimetro de su abuelo cuadrilatero
+#=====================================================
+perimetro1 = cuadrado1.perimetro()
+
+#=====================================================
+# Llamar a su propio metodo area
+#=====================================================
+area1 = cuadrado1.area()
+
+print("Perimetro = ", perimetro1)
+print("Area = ", area1)
+
+#=========================================================================================
+# Sobre-escribir un método de su madre o abuela o tatarabuela...
+# Es volver a definir una función ya existente
+#=========================================================================================
+
+
+
+#======================================
+# La clase A tiene 3 numeros reales
+#======================================
+
+class A:
+    __a:float = 0.0
+    __b:float = 0.0
+    __c:float = 0.0
+    
+    def __init__(self,a:float, b:float,c:float):
+        self.a = a
+        self.b = b
+        self.c = c
+
+#============================================================
+# La clase B tiene dos numeros reales
+#============================================================
+class B:
+    __d:float=0.0
+    __e:float=0.0
+
+    def __init__(self,d:float,e:float):
+        self.d = d
+        self.e = e
+
+    #================================================
+    # Metodo sumar todo (internos + externos)
+    #================================================
+    def sumar_todo(self,aa:float, bb:float):
+        x:float=self.d + self.e + aa + bb
+        return x
+
+#===============
+# Asociacion
+#===============
+#Usando objetos independientes
+objetoA = A(1.0,2.0,3.0)
+objetoB = B(4.0,5.0)
+print(objetoB.sumar_todo(objetoA.a,objetoA.b))
+
+#===============================================
+# El objeto C tiene dos reales y un objeto A
+# EL objeto A se intancia dentro del C
+#===============================================
+class C:
+    __d:float=0.0
+    __e:float=0.0
+    __Aa:A=None
+
+    def __init__(self,d:float,e:float):
+        self.d = d
+        self.e = e
+        # A está instanciado adentro
+        self.Aa = A(1.0,2.0,3.0)
+    def sumar_todo(self):
+        x:float=self.d + self.e + self.Aa.a + self.Aa.b
+        return x
+
+#======================================
+# Composición
+# Contiene otro objeto dentro
+#======================================
+objetoC  = C(4.0,5.0)
+print(objetoC.sumar_todo())
+
+#==================================================================
+# Objeto D tiene dos reales y un objeto A definido por fuera
+#==================================================================
+class D:
+    __d:float=0.0
+    __e:float=0.0
+    __Aa:A = None
+
+    def __init__(self,d:float, e:float, Aa:A):
+        self.d = d
+        self.e = e
+        self.Aa = Aa
+
+    def sumar_todo(self):
+        x:float=self.d + self.e + self.Aa.a + self.Aa.b
+        return x
+
+#==================================================
+# Agregación
+# Construye el objeto agregado por fuera
+#==================================================
+objetoD = D(4.0,5.0, objetoA)
+print(objetoD.sumar_todo())
+
 
