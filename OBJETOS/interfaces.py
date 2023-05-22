@@ -8,13 +8,13 @@ from aplicacion.repositorio.basededatos import BaseDeDatos
 # Del directorio aplicacion, subdirectorio repositorio,
 # el archivo s3.py : trae el objeto S3
 #===================================================
-from aplicacion.repositorio.s3 import s3
+from aplicacion.repositorio.s3 import S3
 
 #======================================================================
 # Del directorio aplicacion, el subdirectorio repositorio,
 # el archivo sistemadearchivos.py : traer el objeto SistemaDeArchivos
 #======================================================================
-from aplicacion.repositorio.sistemadearchivos.py import SistemaDeArchivos
+from aplicacion.repositorio.sistemadearchivos import SistemaDeArchivos
 
 #========================================================
 # Del directorio aplicacion, subdirectorio models,
