@@ -14,7 +14,7 @@ try:
     cliente.guardarDinero(300)
     print(cliente.imprimirInfo())
     cliente.retirarDinero(400)
-    print(cliente.imprimirINfo())
+    print(cliente.imprimirInfo())
 
   
 #===================================================
@@ -28,7 +28,7 @@ except Exception as e:
 #===================================================
 
 try:
-    print(cliente.__nombres)
+    print(cliente.nombres)
 except Exception as ex:
     print("Error: " + str(ex))
 
