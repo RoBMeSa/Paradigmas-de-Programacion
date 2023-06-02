@@ -7,7 +7,7 @@ from functools import lru_cache
 def fibonacci_lento(n):
     if n == 1:
         return 1
-    if n = 2:
+    if n == 2:
         return 1
     if n > 2:
         return fibonacci_lento(n-1) + fibonacci_lento(n-2)
@@ -27,7 +27,7 @@ def fibonacci(n):
     #================================
     # Revisa si ya existe  regresa el valor
     #================================
-    if n in fibonaccis[n]
+    if n in fibonaccis:
         return fibonaccis[n]
 
     if n == 1:

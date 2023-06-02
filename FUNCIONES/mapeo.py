@@ -52,7 +52,7 @@ saludar(en_minusculas)
 #====================================
 
 def divisor(x):
-    def dividiendo(y):
+    def dividendo(y):
         return y/x
     return dividendo
 
