@@ -20,8 +20,8 @@ if __name__ == "__main__":
     #==================================================================
     # Numero comun a los procesos, i de entero, comienza siendo 0 
     #==================================================================
-    numer_compartido = Value('i', 0)
-    print("Al principio vale = , " numero_compartido.value)
+    numero_compartido = Value('i', 0)
+    print("Al principio vale =  ", numero_compartido.value)
     p1 = Process(target=sumale100, args=(numero_compartido, candado))
     p2 = Process(target=sumale100, args=(numero_compartido, candado))
     p1.start()

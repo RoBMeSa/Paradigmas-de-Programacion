@@ -15,7 +15,7 @@ rank = comm.Get_rank()
 # El proceso 0 tiene datos y los otros no
 #===============================
 if rank == 0:
-    data = {'key1':[7,2.72, 2+3]
+    data = {'key1':[7,2.72, 2+3],
              'key2':('abc','xyz')}
 else:
     data = None

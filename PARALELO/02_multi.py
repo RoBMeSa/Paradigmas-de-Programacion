@@ -12,7 +12,7 @@ cpus = os.cpu_count()
 print("Nucleos en el gpu: ", cpus)
 for i in range(cpus):
     print("Registrando el proceso %d" % i)
-    procesos.aooend(Thread(target=calc))
+    procesos.append(Process(target=calc))
 
 start = time.time()
 

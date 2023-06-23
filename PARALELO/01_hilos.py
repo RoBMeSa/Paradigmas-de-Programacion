@@ -1,4 +1,4 @@
-from threading import thread
+from threading import Thread
 import os
 import math
 import time
@@ -12,7 +12,7 @@ cpus = os.cpu_count()
 print("Nucleos en el gpu: ", cpus)
 for i in range(cpus):
     print("Registrando el hilo %d" % i)
-    threads.aooend(Thread(target=calc))
+    threads.append(Thread(target=calc))
 
 start = time.time()
 

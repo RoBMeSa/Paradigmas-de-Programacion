@@ -22,7 +22,7 @@ if rank == 0:
 # Matriz vacia de tamaño procesos *n
 # dtype es el tipo de dato (i) es entero
 #==================================
-    recvarray = numnpy.empty([size, n], dtype = 'i')
+    recvarray = numpy.empty([size, n], dtype = 'i')
     
 #============================
 # Gather es rapido para numpy

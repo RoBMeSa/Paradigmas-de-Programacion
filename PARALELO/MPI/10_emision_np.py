@@ -20,13 +20,19 @@ else:
     data = numpy.empty(n, dtype = 'i')
 
 #======================================
+# Enviamos diccionario a todos los procesos desde root
+#======================================
+data = comm.bcast(data, root=0)
+print(data)
+
+#======================================
 # Broadcast pro que indica el tipo de datos
 # Optimizado para comunicacion rapida
 #=======================================
-comm.bcast([data, MPI.INT], root = 0)
+comm.Bcast([data, MPI.INT], root = 0)
 
 #Asegurate de que todo salio bien
-for i in range(n)
+for i in range(n):
     assert data[i] == i
 print(data)
 

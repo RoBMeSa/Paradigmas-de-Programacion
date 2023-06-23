@@ -10,7 +10,7 @@ def sumale100(numero, candado):
         #Poner el candado
         candado.acquire()
         #Hacer la operacion
-        numero.value + = 1
+        numero.value += 1
         #Quitar el candado
         candado.release()
 
@@ -21,8 +21,8 @@ if __name__ == "__main__":
     # Numero comun a los procesos, i de entero, comienza siendo 0 
     # Value es un objeto de numero compartido
     #==================================================================
-    numer_compartido = Value('i', 0)
-    print("Al principio vale = , " numero_compartido.value)
+    numero_compartido = Value('i', 0)
+    print("Al principio vale =  ", numero_compartido.value)
     p1 = Process(target=sumale100, args=(numero_compartido, candado))
     p2 = Process(target=sumale100, args=(numero_compartido, candado))
     p1.start()

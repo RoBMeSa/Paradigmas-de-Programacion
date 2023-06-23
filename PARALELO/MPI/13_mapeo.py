@@ -11,7 +11,7 @@ n = 40
 x = range(n)
 m = int (math.ceil(float(len(x))/size))
 x_chunk = list(x[rank*m:(rank+1)*m])
-R_chunk = list(map(math.sqrt,x_chunk))
+r_chunk = list(map(math.sqrt,x_chunk))
 
 #=======================
 # Una sola lista de todos los datos
